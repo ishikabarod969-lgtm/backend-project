@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission page</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+    <h1>ISHIKA Coaching Classes</h1>
+    <p>"Future ko Bright banaye – Quality Education ke sath"</p>
+  </header>
+
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="#about">About</a>
+    <a href="#admission">Admission</a>
+    <a href="#teachers">Teachers</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="section" id="admission">
+    <div class="title">Admission Form</div>
+    <div class="card">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Student Name" required style="width:100%;padding:10px;margin-bottom:10px;">
+        <input type="email" name="email" placeholder="Email" required style="width:100%;padding:10px;margin-bottom:10px;">
+        <input type="text" name="phone" placeholder="Phone Number" required style="width:100%;padding:10px;margin-bottom:10px;">
+        <button type="submit" style="padding:10px 20px;background:#0056ff;color:white;border:none;border-radius:5px;">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Bright Coaching Classes. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
